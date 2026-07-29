@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《成交》· 暗影集市 v2 · ANIMA MERCATUS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== 环境层：雾 / 灰烬 / 暗角 ===== -->
+<div class="env">
+  <div class="env-sky"></div>
+  <div class="env-ridge"></div>
+  <div class="env-fog fog1"></div>
+  <div class="env-fog fog2"></div>
+  <div class="env-fog fog3"></div>
+  <canvas id="ashCanvas"></canvas>
+  <div class="env-vignette"></div>
+  <div class="env-grain"></div>
+</div>
+
+<!-- ===== 顶栏：石刻横幅 ===== -->
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" id="brandSigil"></div>
+    <div class="brand-txt">
+      <h1>成 交</h1>
+      <span class="brand-sub">ANIMA&nbsp;MERCATUS · 暗影集市</span>
+    </div>
+  </div>
+
+  <div class="hud">
+    <div class="hud-cell">
+      <span class="hud-k">CIRCULUS</span>
+      <span class="hud-v"><b id="hRound">1</b><i>/3</i></span>
+    </div>
+    <div class="hud-sep"></div>
+    <div class="hud-cell wide">
+      <span class="hud-k" id="hPhaseLatin">PRAELUDIUM</span>
+      <span class="hud-v phase" id="hPhase">准备</span>
+    </div>
+    <div class="hud-sep"></div>
+    <div class="hud-cell gold" id="goldCell">
+      <span class="hud-k">AURUM</span>
+      <span class="hud-v"><b id="hGold">0</b></span>
+    </div>
+    <div class="hud-sep"></div>
+    <div class="hud-cell ident" id="hYou"></div>
+  </div>
+
+  <button class="btn ghost tome" id="btnHelp"><span>卷 宗</span></button>
+</header>
+
+<!-- ===== 主舞台 ===== -->
+<main class="stage">
+
+  <!-- 左：身份圣龛 -->
+  <aside class="col col-left">
+    <section class="slab">
+      <h2 class="slab-h"><i></i>你的人生 · 圣龛<i></i></h2>
+      <div id="identityBox"></div>
+    </section>
+
+    <section class="slab">
+      <h2 class="slab-h"><i></i>六套配方 · 众生皆见<i></i></h2>
+      <div id="publicSetsBox"></div>
+    </section>
+  </aside>
+
+  <!-- 中：终极之物 + 仪式台 -->
+  <section class="col col-core">
+    <div class="orb-stage">
+      <div class="orb-nebula"></div>
+      <div class="orb-stars" id="orbStars"></div>
+      <div class="orb-glowfloor"></div>
+      <div class="orb-wrap" id="orbWrap"></div>
+      <div class="orb-shock" id="orbShock"></div>
+      <svg class="phase-ring" viewBox="0 0 400 400" id="phaseRing"></svg>
+      <div class="orb-caption">
+        <span class="oc-l" id="orbTitle">TERMINUS</span>
+        <span class="oc-s" id="orbSub">终极之物 · 尚未开启</span>
+      </div>
+    </div>
+
+    <div class="ritual" id="ritual">
+      <div id="centerContent"></div>
+      <div class="core-actions">
+        <button class="btn primary" id="btnMain"><span>开 始</span></button>
+        <button class="btn ghost" id="btnAuto"><span>自动推演（自检）</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 右：手牌 + 对手卷档 + 编年 -->
+  <aside class="col col-right">
+    <section class="slab">
+      <h2 class="slab-h"><i></i>手牌 · 人生碎片<i></i></h2>
+      <div class="hand-hint">点卡面可 上架 / 撤下 · 红痕 = 自套缺口 · 金蚀 = 抢手</div>
+      <div id="handBox"></div>
+    </section>
+    <section class="slab">
+      <h2 class="slab-h"><i></i>对手 · 身份隐于暗处<i></i></h2>
+      <div id="oppBox"></div>
+    </section>
+    <section class="slab chron">
+      <h2 class="slab-h"><i></i>集市编年<i></i></h2>
+      <div id="log"></div>
+    </section>
+  </aside>
+</main>
+
+<div id="modalRoot"></div>
+<div id="fxRoot"></div>
+
+<script src="core.js"></script>
+<script src="art.js"></script>
+<script src="fx.js"></script>
+<script src="ui.js"></script>
+</body>
+</html>
